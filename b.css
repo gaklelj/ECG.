@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #fafafa;
+    font-family: 'Trebuchet MS';
+}
+header {
+    width: 100%;
+    padding: 10px 0.5% 0% 0.5%;
+    background: transparent;
+    float: left;
+    position: fixed;
+}
+header #logo {
+    color: white;
+    cursor: pointer;
+}
+header #logo span {
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    font-family: 'Suez One', serif;
+}
+@media (min-width: 701px) {
+    #logo {
+        float: left;
+        width: 30%;
+        font-size: 1.1em;
+    }
+    #about {
+        float: right;
+        width: 67%;
+    }
+}
+@media (max-width: 700px) {
+    #logo {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 1.5em;
+    }
+    #about {
+        float: left;
+        width: 100%;
+    }
+    a {
+        margin-left: 20px;
+    }
+}
+#about {
+    text-align: center;
+    font-size: 1em;
+    line-height: 40px;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+#about a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #a1c349;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 25px; 
+    border-radius: 5px;
+}
+#about a:last-child {
+    margin-right: 0;
+}
+#about a:hover {
+    background-color: #a1c349;
+    color: white;
+}
+
+
+.fixed {
+    z-index: 5000;
+    background-color: #fff;
+    border-bottom: 1px solid silver;
+}
+header.fixed #logo {
+    color: #343434;
+}
+.fixed #about a {
+    color: #343434;
+}
+.fixed #about a:hover {
+    color: #7c7c7c;
+}
+
+#top {
+    width: 100%;
+    height: 500px;
+    background-image: url(https://foni.club/uploads/posts/2023-02/1676816921_foni-club-p-oboi-meditsina-na-pk-4.jpg);
+    background-blend-mode: multiply;
+    background-color: #2e3a44;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+}
+
+#top h1 {
+    padding: 20%;
+}
+
+#main {
+    padding: 100px 20%;
+    width: 60%;
+    float: left;
+    background-color: #a1c349;
+    border-left: 2px solid silver;
+    color: #484848;
+    font-size: 1.3em;
+}
+
+#main div {
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+#main h2 {
+    font-size: 3em;
+}
+
+#main span {
+    color: #2e3a44;
+}
+#instructions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2e3a44;
+    border-radius: 10px;
+    margin: 20px 0;
+    margin-bottom:0;
+}
+
+#instructions .textp {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 18px;
+    color:#fff;
+}
+
+#instructions div a, #instructions a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a1c349;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+#instructions div a:hover, #instructions a:hover {
+    background-color: #a1c349;
+}
+
+#plotter {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    #instructions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #plotter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #instructions .textp {
+        padding-left: 0;
+        text-align: left;
+    }
+}
+#electrodes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #94b63c;
+    border-radius: 10px;
+    margin-bottom:0;
+}
+
+#electrodes img {
+    max-width: 500px;
+    height: 450px;
+    border-radius: 10px;
+}
+#instructions {
+    margin-bottom: 0;
+}
+
+#electrodes {
+    margin-top: 0;
+}
+
+/* Стили для вытянутой формы instructions */
+#instructions {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2e3a44;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Кнопки под друг другом */
+#plotter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#plotter a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2e3a44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Расстояние между кнопками */
+    font-size: 16px;
+}
+
+#plotter a:hover {
+    background-color: #0056b3;
+}
+.comments {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment p {
+    font-size: 16px;
+    color: #555;
+}
+
+.comment strong {
+    font-size: 18px;
+    color: #000;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+#commentform {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 25px;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.delete-button {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.important-note {
+    margin: 20px auto;
+    width: 60%;
+    background-color: #ffeb3b;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
