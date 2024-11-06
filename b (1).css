@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            background-color: #ffffff;
+            font-family: 'Trebuchet MS';
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            background: #ff4c4c;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header #logo {
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: bold;
+            float: left;
+            font-size: 1.7em;
+            margin-left: 20px;
+            font-family: 'Suez One', serif;
+        }
+        #logo img {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+                width: 50px; 
+                height: 50px;
+                margin-right: 10px;
+                border-radius: 50%; 
+        }
+        #about {
+            float: right;
+            text-align: center;
+            font-size: 1em;
+            line-height: 40px;
+            margin-top: 5px;
+            padding-right: 20px;
+        }
+        #about a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            margin-right: 25px; 
+            border-radius: 5px;
+        }
+        #about a:hover {
+            background-color: #ffffff;
+            color: #ff4c4c;
+        }
+        #top {
+            width: 100%;
+            height: 500px;
+            background-image: url('https://foni.club/uploads/posts/2023-02/1676816921_foni-club-p-oboi-meditsina-na-pk-4.jpg');
+            background-blend-mode: multiply;
+            background-color: #ffffff;
+            background-size: cover;
+            text-align: center;
+            color: #ff4c4c;
+            font-size: 2em;
+            padding-top: 200px;
+        }
+        #main {
+            padding: 100px 20%;
+            width: 60%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            color: #484848;
+            font-size: 1.3em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #main h2 {
+            color: #ff4c4c;
+            font-size: 2.5em;
+        }
+        .important-note {
+            margin: 20px auto;
+            width: 60%;
+            background-color: #ffcccc;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #instructions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #ff4c4c;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: white;
+        }
+        #instructions .textp {
+            flex: 2;
+            text-align: left;
+            padding-left: 20px;
+            font-size: 18px;
+        }
+        #plotter a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: #ff4c4c;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        #plotter a:hover {
+            background-color: #ff9999;
+        }
+        #electrodes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #ffcccc;
+            border-radius: 10px;
+        }
+        #electrodes img {
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .comments {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .comment {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .comment p {
+            font-size: 16px;
+            color: #555;
+        }
+        .comment strong {
+            font-size: 18px;
+            color: #000;
+        }
+        #commentForm {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff4c4c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button.delete-button {
+            background-color: #ff9999;
+        }

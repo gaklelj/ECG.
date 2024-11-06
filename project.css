@@ -1,40 +1,39 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	background-color: rgb(29, 30, 34);
-	color: rgb(29, 30, 34);
+	background-color: #1d1e22;
+	color: #1d1e22;
 }
 
 body {
-font-family: 'Inter', sans-serif;
-color: #666666;
-background-color: #f7fafc;
-font-size: 16px;
-padding-bottom: 5rem;
+	font-family: 'Inter', sans-serif;
+	color: #666666;
+	background-color: #ffffff;
+	font-size: 16px;
+	padding-bottom: 5rem;
 }
 
-.headline {
-font-size: 1.25rem;
-font-weight: 600;
-}
-
-.text--small {
-font-size: 0.875rem;
+h1 {
+	font-size: 45px;
+	color: #ff4c4c;
+	text-align: center;
+	margin-top: 0;
 }
 
 a {
-color: #606FC7;
-font-weight: 600;
+	color: #ff4c4c;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 a:hover {
-color: #434190;
+	color: #ff9999;
 }
 
 i {
 position: absolute;
 padding: 0.75rem;
-color: #606FC7;
+color: #ff4c4c;
 }
 
 span.icon {
@@ -44,46 +43,35 @@ right: 0;
 }
 
 .header {
-background-color: white;
-padding: 1rem;
-padding-bottom: 2.5rem;
+	background-color: #ff4c4c;
+	padding: 1rem;
+	padding-bottom: 2.5rem;
 }
 
 .header__grid {
-display: grid;
-grid-template-columns: repeat(1, minmax(0, 1fr));
-grid-template-rows: repeat(4, minmax(0, 1fr));
-gap: 1.5rem;
-max-width: 56rem;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+	max-width: 56rem;
+	margin: auto;
 }
 
 .header__logo {
-height: 4rem;
-}
-
-.header__label {
-text-transform: uppercase;
-display: block;
-margin-bottom: 0.5rem;
-font-size: 0.875rem;
-font-weight: 600;
-color: #718096;
+	height: 4rem;
 }
 
 .content {
-padding: 1rem;
-width: 100%;
+	padding: 2rem;
+	width: 100%;
+	margin: auto;
+	max-width: 56rem;
 }
 
 .content__grid {
-display: grid;
-grid-template-columns: repeat(12, minmax(0, 1fr));
-grid-template-rows: repeat(3, minmax(0, 1fr));
-max-width: 56rem;
-column-gap: 1rem;
-row-gap: 2.5rem;
-padding-top: 1rem;
-padding-bottom: 1rem;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: 1rem;
+	row-gap: 2.5rem;
 }
 
 #imageOptions.content__grid {
@@ -122,7 +110,7 @@ margin-bottom: 1rem;
 
 .divider {
 border-width: 1px;
-border-color: #cbd5e0;
+border-color: #ffffff;
 margin-top: 2.5rem;
 margin-bottom: 2.5rem;
 height: 0;
@@ -163,11 +151,12 @@ padding-top: 0.5rem;
 padding-bottom: 0.5rem;
 padding-left: 0.75rem;
 padding-right: 0.75rem;
-background-color: white;
+background-color: #ff4c4c;
 border-width: 1px;
-border-color: #cbd5e0;
+border-color: #ff4c4c;
 margin-right: -0.5rem;
 height: 2.5rem;
+color:#fff;
 }
 
 .bttn.fill {
@@ -179,7 +168,7 @@ outline: 1px dotted;
 }
 
 .bttn:hover {
-background-color: #edf2f7;
+background-color: #ff9999;
 }
 
 .left {
@@ -194,17 +183,17 @@ margin-right: 0;
 }
 
 .bttn.active {
-background-color: #606FC7;
+background-color: #ff4c4c;
 color: white;
 border-width: 1px;
-border-color: #606FC7;
+border-color: #ff4c4c;
 }
 
 .bttn__primary {
-background-color: #606FC7;
+background-color: #ff4c4c;
 color: white;
 border-width: 1px;
-border-color: #606FC7;
+border-color: #ff4c4c;
 border-radius: 0.25rem;
 font-size: 1.125rem;
 padding-left: 1.25rem;
@@ -213,8 +202,18 @@ padding-top: 0.75rem;
 padding-bottom: 0.75rem;
 }
 
-.bttn.active:hover, .bttn__primary:hover {
-background-color: #4c51bf;
+.bttn {
+	background-color: #ff4c4c;
+	border-color: #ff4c4c;
+	color: white;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover and active states */
+.bttn:hover,
+.bttn:active {
+	background-color: #ff9999;
+	border-color: #ff9999;
 }
 
 .codeblock {
@@ -295,34 +294,39 @@ h1 {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-color: #f0f0f0;
+	background-color: #ffffff;
 }
 
 h1 {
 	margin-top: 0;
+	width: 100%;
 }
 #stopButton {
 	margin-top: 10px;
 	padding: 10px 20px;
-	background-color: #606FC7;
+	background-color: #ff4c4c;
 	color: white;
 	border: none;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 #startButton {
 	margin-bottom: 5px;
 	padding: 10px 20px;
-	background-color: #606FC7;
+	background-color: #ff4c4c;
 	color: white;
 	border: none;
 	cursor: pointer;
+	border-radius: 5px;
 }
 #stopButton:hover {
-	background-color: #666666;
+	background-color: #ff9999;
+	border-radius: 5px;
 }
 #startButton:hover {
-	background-color: #666666;
+	background-color: #ff9999;
+	border-radius: 5px;
 }
 #videoContainer {
 	position: center;
@@ -348,4 +352,18 @@ h1 {
 
 #video-frame {
 	display: none;
+}
+.logo-image {
+	width: 100px; 
+	height: 100px;
+	margin-right: 10px; 
+}
+.logo-container {
+	display: flex;
+	align-items: center;
+	font-family: 'Arial', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #ff4c4c;
+	background-color: #ff4c4c;
 }

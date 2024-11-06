@@ -4,140 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="b.css">
+    <link rel="stylesheet" href="b (1).css">
 </head>
 <body>
     <header>
-        <div id="logo" onclick="slowScroll('top')">
-            <span>Cardio</span>    
-        </div>
-        <div id="about">
-            <a href="project.html" title="Загрузить фото" onclick="slowScroll('download photo')">Загрузить фото</a>
-            <a href="#instructions" title="Инструкция">Инструкция</a>
-            <a href="#electrodes" title="Электроды">Электроды</a>
-          </div>
-        </div>
+      <div id="logo" onclick="slowScroll('top')">
+          <span>CardioScan</span>
+      <img src="logo.ecg" alt="Логотип" class="logo-image"></div>
+      <div id="about">
+          <a href="project.html" title="Загрузить фото">Загрузить фото</a>
+          <a href="#instructions" title="Инструкция">Инструкция</a>
+          <a href="#electrodes" title="Электроды">Электроды</a>
+      </div>
     </header>
-
+  
     <div id="top">
-        <h1>Предоставляем медицинский анализ!</h1>
+        <h1>Медицинский анализ ЭКГ</h1>
     </div>
+  
     <div class="important-note">
-      Мы не гарантируем точный медицинский диагноз и не ставим его, поэтому при подозрениях или болях в области сердца проконсультируйтесь у врача.
-  </div>
+        Обратите внимание: наш сервис не заменяет консультацию врача!
+    </div>
     
     <div id="main">
         <div class="intro">
-          <h2>Наши услуги помогут вам!</h2>
-          <span>Выбор того, что может вам пригодиться</span>
+            <h2>Наши услуги помогут вам!</h2>
+            <span>Выбор того, что может вам пригодиться</span>
         </div>
         <div class="text">
-          <span>Анализ снимков ЭКГ! Чтобы попробовать наш анализ снимков вам нужно нажать на кнопку "Загрузить фото" и выбрать ваш снимков Если вы увидели на своем снимке после анализа пометки это значит обнаружение аномалии вашего сердечного ритма,советуем обратиться к врачу</span>
+            <p>Анализ снимков ЭКГ поможет вам выявить возможные аномалии сердечного ритма. Нажмите "Загрузить фото" для начала анализа.</p>
         </div>
-      </div>
-   
-    <title>ECG-analyzer</title>
+    </div>
+  
     <form id="instructions">
-      <div id="plotter">
-           <a href="C:/Users/USER/Documents/Arduino/ecg.plotter/sketch_aug28a/sketch_aug28a.ino" download>Скачать плоттер</a>
-           <a href="https://create.arduino.cc/editor">Ссылка для онлайн ардуино плоттера</a>
-      </div>
-      <div class="textp">
-         Чтобы получить анализ ЭКГ через портативный кардиограф вам нужно скачать файл через кнопку "Скачать плоттер" и можете запустить его через ссылку для ардуино плоттера.
-         Также ниже вы можете увидеть способы закрепления электродов кардиографа на теле.
-      </div>
-   </form>
-   <form id="electrodes">
-    <img src="data:image/jpeg;base64,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" alt="Электроды">
-</form>
-
-<div class="comments" id="comments-section">
-  <div class="comment">
-      <p><strong>Биржан Ханбол:</strong> Попробовал это устройство на себе, данный проект поможет ускорить многие процессы. А то, что данный проект улучшит, дойдет до максимума.</p>
-  </div>
-  <div class="comment">
-      <p><strong>Жумабаева Айдана:</strong> Я считаю, что данный проект очень перспективен. Очень удобен в использовании, сам процесс проверки был интересен.</p>
-  </div>
-  <div class="comment">
-      <p><strong>Канат Абухан:</strong> Это самый лучший проект, который когда-либо я видел. При проверке я знал, что всё пройдет гладко.</p>
-  </div>
-  <div class="comment">
-    <p><strong>Мурадешева Аделина: </strong>Это был первый раз, когда я использовала на себе такой тип технологий. Я не раз сдавала ЭКГ в традиционном варианте и могу сказать, что этот проект — огромный шаг в технологиях и использовании ИИ. Это очень удобно, результаты приходят быстро, и ИИ выдаёт ответ на основе исследований на просторах сети от профессионалов. </p>
-</div><div class="comment">
-  <p><strong>Юсупов Алибек: </strong>Я попробовал это на себе, было удобно и практично. Впечатления перспективны, также как и упрощённый анализ ЭКГ. </p>
-</div><div class="comment">
-  <p><strong>Елжан Арнур: </strong>Создание прототипа программы улучшит анализ в реальном времени и сделает проект более мобильным. </p>
-</div><div class="comment">
-  <p><strong>Ермек Нурдаулет: </strong>Мне кажется, данный проект поможет сократить время анализов и сделает его более понятным. </p>
-</div><div class="comment">
-  <p><strong>Жанабай Нурбакыт: </strong>Попробовав данный проект на себе, я понял, что он поможет сделать анализ ЭКГ более удобным и мобильным. </p>
-</div><div class="comment">
-  <p><strong>Алимуказ Данияр: </strong>Опробовал проект на себе, очень помогает снимать ЭКГ с меньших усилий и делать его анализ. Круто! </p>
-</div><div class="comment">
-  <p><strong>Турсын Гулим: </strong>Хороший проект, перспективная вещь. Можно всегда, очень удобен в использовании. </p>
-</div>
-</div>
-
-<h2>Добавить новый отзыв</h2>
-<form id="commentForm">
-  <label for="name">Имя:</label>
-  <input type="text" id="name" name="name" required><br><br>
+        <div id="plotter">
+            <a href="C:/Users/USER/Documents/Arduino/ecg.plotter/sketch_aug28a/sketch_aug28a.ino" download>Скачать плоттер</a>
+            <a href="https://create.arduino.cc/editor">Онлайн-плоттер Arduino</a>
+        </div>
+        <div class="textp">
+            Используйте наши инструменты для анализа ЭКГ и закрепления электродов.
+        </div>
+    </form>
   
-  <label for="comment">Комментарий:</label><br>
-  <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+    <form id="electrodes">
+        <img src="electrods.jpg" alt="Электроды">
+    </form>
   
-  <button type="submit">Отправить</button>
-  <button class="delete-button">Удалить</button>
-</form>
+    <div class="comments" id="comments-section">
+        <div class="comment">
+            <p><strong>Биржан Ханбол:</strong> Попробовал это устройство на себе, данный проект поможет ускорить многие процессы. А то, что данный проект улучшит, дойдет до максимума.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Жумабаева Айдана:</strong> Я считаю, что данный проект очень перспективен. Очень удобен в использовании, сам процесс проверки был интересен.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Канат Абухан:</strong> Это самый лучший проект, который когда-либо я видел. При проверке я знал, что всё пройдет гладко.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Мурадешева Аделина:</strong> Это был первый раз, когда я использовала на себе такой тип технологий. Я не раз сдавала ЭКГ в традиционном варианте и могу сказать, что этот проект — огромный шаг в технологиях и использовании ИИ. Это очень удобно, результаты приходят быстро, и ИИ выдаёт ответ на основе исследований на просторах сети от профессионалов.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Юсупов Алибек:</strong> Я попробовал это на себе, было удобно и практично. Впечатления перспективны, также как и упрощённый анализ ЭКГ.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Елжан Арнур:</strong> Создание прототипа программы улучшит анализ в реальном времени и сделает проект более мобильным.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Ермек Нурдаулет:</strong> Мне кажется, данный проект поможет сократить время анализов и сделает его более понятным.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Жанабай Нурбакыт:</strong> Попробовав данный проект на себе, я понял, что он поможет сделать анализ ЭКГ более удобным и мобильным.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Алимуказ Данияр:</strong> Опробовал проект на себе, очень помогает снимать ЭКГ с меньших усилий и делать его анализ. Круто!</p>
+        </div>
+    </div>
+  
+    <h2 style="color: #ff4c4c; text-align: center;">Добавить новый отзыв</h2>
+    <form id="commentForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="comment">Комментарий:</label><br>
+        <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+        
+        <button type="submit">Отправить</button>
+        <button type="button" class="delete-button">Удалить</button>
+    </form>
 
-  <script>
-      include('fetch_comments.php');
-  </script>
+    <script src="index.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
-        function slowScroll(id) {
-           $('html','body').animate({
-             scrollTop: $(id).offset().top
-           }),500;
-        }
-
-        $(document).on ("scroll" , function () {
-        if($ (window). scrollTop() === 0)
-        $("header").removeClass("fixed");
-        else
-        $("header").attr("class","fixed");
-        });
-        document.getElementById('commentForm').addEventListener('submit', function(event) {
-            event.preventDefault();  // Предотвращаем отправку формы по умолчанию
-
-            const formData = new FormData(this);  // Собираем данные формы
-
-            // Отправляем запрос на сервер с помощью fetch
-            fetch('submit_comment.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                // После успешной отправки комментария обновляем список комментариев
-                loadComments();
-                // Очищаем форму
-                this.reset();
-            });
-        });
-
-        // Функция для загрузки комментариев с сервера
-        function loadComments() {
-            fetch('fetch_comments.php')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('comments').innerHTML = data;  // Обновляем блок комментариев
-            });
-        }
-
-        // Загружаем комментарии при загрузке страницы
-        loadComments();
-    </script>
-</body>
-</html> 
+  </body>
+  </html>
