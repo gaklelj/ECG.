@@ -1,7 +1,10 @@
 <html>
 <head>
-    <div class="logo-container"><img src="logo.ecg" alt="Логотип" class="logo-image">
-        <h1 style="background-color: #ff4c4c; color: #ffffff;">CardioScan</h1></div>
+    <div class="logo-container">
+        <img src="logo.ecg" alt="Логотип" class="logo-image">
+        <h1 style="background-color: #ff4c4c; color: #ffffff;">CardioScan</h1>
+        <a href="index.html" class="home-button">Главная</a>
+    </div>
     
     <title>Cardio Inference</title>
 	<meta name="Cardio" content="noindex">
@@ -14,7 +17,31 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link href="project.css" rel="stylesheet"></head>
+<link rel="stylesheet" href="project.css">
+<style>
+        .home-button {
+            margin-left: auto;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #ff4c4c;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .home-button:hover {
+            background-color: #ff4c4c;
+            color: #ffffff;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #ff4c4c;
+        }
+    </style>
+</head>
 <body>
 <form id="inputForm">
     <div>
@@ -136,11 +163,45 @@
 
     const socket = io('http://127.0.0.1:5000');
 
-    socket.on('frame', function(data) {
-        const img = new Image();
-        img.src = 'data:image/jpeg;base64,' + data.image;
+        // Список аномалий с их цветами и описаниями
+        const anomalyDescriptions = [
+            { color: 'rgba(255, 0, 0, 1)', description: 'ST-сегмент депрессия' },
+            { color: 'rgba(0, 0, 255, 1)', description: 'Инверсия Т-зубца' }
+        ];
 
-        img.onload = function() {
+        // Функция нахождения областей по цвету (эмуляция)
+        function findRegionsByColor(color) {
+            // Здесь должна быть логика анализа пикселей изображения
+            // Для примера возвращаем фиктивные данные
+            if (color === 'rgba(255, 0, 0, 1)') {
+                return [{ x: 50, y: 100, width: 200, height: 50 }];
+            } else if (color === 'rgba(0, 0, 255, 1)') {
+                return [{ x: 300, y: 200, width: 150, height: 70 }];
+            }
+            return [];
+        }
+
+    socket.on('frame', function(data) {$1img.onload = function() {
+                // Обработка кадра и добавление подписей
+                context.clearRect(0, 0, canvasOverlay.width, canvasOverlay.height);
+                canvasOverlay.width = img.width;
+                canvasOverlay.height = img.height;
+                context.drawImage(img, 0, 0);
+
+                // Добавление подписей к аномалиям
+                anomalyDescriptions.forEach(({ color, description }) => {
+                    const regions = findRegionsByColor(color); // Определяем области по цвету
+                    regions.forEach(region => {
+                        context.strokeStyle = color;
+                        context.lineWidth = 2;
+                        context.strokeRect(region.x, region.y, region.width, region.height);
+
+                        // Подпись аномалии
+                        context.font = '14px Arial';
+                        context.fillStyle = color;
+                        context.fillText(description, region.x, region.y - 5);
+                    });
+                });
             context.clearRect(0, 0, canvasOverlay.width, canvasOverlay.height);
             canvasOverlay.width = img.width;
             canvasOverlay.height = img.height;

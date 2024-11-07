@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="b (1).css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
@@ -47,41 +47,50 @@
     </form>
   
     <form id="electrodes">
-        <img src="electrods.jpg" alt="Электроды">
+        <img src="elestrods.jpg" alt="Электроды">
     </form>
   
     <div class="comments" id="comments-section">
         <div class="comment">
             <p><strong>Биржан Ханбол:</strong> Попробовал это устройство на себе, данный проект поможет ускорить многие процессы. А то, что данный проект улучшит, дойдет до максимума.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Жумабаева Айдана:</strong> Я считаю, что данный проект очень перспективен. Очень удобен в использовании, сам процесс проверки был интересен.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Канат Абухан:</strong> Это самый лучший проект, который когда-либо я видел. При проверке я знал, что всё пройдет гладко.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Мурадешева Аделина:</strong> Это был первый раз, когда я использовала на себе такой тип технологий. Я не раз сдавала ЭКГ в традиционном варианте и могу сказать, что этот проект — огромный шаг в технологиях и использовании ИИ. Это очень удобно, результаты приходят быстро, и ИИ выдаёт ответ на основе исследований на просторах сети от профессионалов.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Юсупов Алибек:</strong> Я попробовал это на себе, было удобно и практично. Впечатления перспективны, также как и упрощённый анализ ЭКГ.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Елжан Арнур:</strong> Создание прототипа программы улучшит анализ в реальном времени и сделает проект более мобильным.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Ермек Нурдаулет:</strong> Мне кажется, данный проект поможет сократить время анализов и сделает его более понятным.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Жанабай Нурбакыт:</strong> Попробовав данный проект на себе, я понял, что он поможет сделать анализ ЭКГ более удобным и мобильным.</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
         <div class="comment">
             <p><strong>Алимуказ Данияр:</strong> Опробовал проект на себе, очень помогает снимать ЭКГ с меньших усилий и делать его анализ. Круто!</p>
+            <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
         </div>
     </div>
   
     <h2 style="color: #ff4c4c; text-align: center;">Добавить новый отзыв</h2>
-    <form id="commentForm">
+    <form id="commentForm" onsubmit="addComment(event)">
         <label for="name">Имя:</label>
         <input type="text" id="name" name="name" required><br><br>
         
@@ -89,8 +98,38 @@
         <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
         
         <button type="submit">Отправить</button>
-        <button type="button" class="delete-button">Удалить</button>
     </form>
+
+    <script>
+        function addComment(event) {
+            event.preventDefault(); // Предотвращаем перезагрузку страницы
+            
+            // Получаем значения из формы
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            
+            // Находим секцию комментариев и создаем новый комментарий
+            const commentSection = document.getElementById('comments-section');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `
+                <p><strong>${name}:</strong> ${comment}</p>
+                <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
+            `;
+            
+            // Добавляем новый комментарий в секцию
+            commentSection.appendChild(newComment);
+            
+            // Очищаем форму после добавления комментария
+            document.getElementById('commentForm').reset();
+        }
+
+        function deleteComment(button) {
+            // Удаляем родительский элемент кнопки, т.е. комментарий
+            const comment = button.parentElement;
+            comment.remove();
+        }
+    </script>
 
     <script src="index.js"></script>
 

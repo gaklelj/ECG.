@@ -71,3 +71,62 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    fetch('/api/comments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, comment }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error);
+        } else {
+            addCommentToPage(data);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
+function addCommentToPage(comment) {
+    const commentSection = document.getElementById('comments-section');
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = `<p><strong>${comment.name}:</strong> ${comment.comment}</p>`;
+    commentSection.appendChild(newComment);
+}
+function addComment(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+    
+    const commentSection = document.getElementById('comments-section');
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = `
+        <p><strong>${name}:</strong> ${comment}</p>
+        <button class="delete-button" onclick="deleteComment(this)">Удалить</button>
+    `;
+    
+    commentSection.appendChild(newComment);
+    console.log("Comment added:", name, comment);
+    
+    // Очистка формы
+    document.getElementById('commentForm').reset();
+}
+
+function deleteComment(button) {
+    const comment = button.parentElement;
+    comment.remove();
+    console.log("Comment deleted");
+}
